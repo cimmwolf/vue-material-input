@@ -8,9 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "node-sass": "^7.0.1",
-    "sass-loader": "^12.6.0"
-  }
+  "license": "MIT"
 }
