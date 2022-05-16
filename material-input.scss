@@ -1,0 +1,99 @@
+.material-input {
+
+  position: relative;
+  padding: 12.85714pt 0;
+  display: inline-block;
+
+  &[disabled] {
+    opacity: var(--input-disabled-opacity, 0.5);
+  }
+
+  .control-label, .error, .hint {
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+    color: currentColor;
+    opacity: var(--label-opacity, 1);
+  }
+
+  .control-label {
+    color: #7C7C7C;
+  }
+
+  .error, .hint {
+    bottom: 0;
+    font-size: 0.75em;
+  }
+
+  .control-label {
+    top: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    transition: height 0.28s ease, font-size 0.28s ease, color 0.28s ease;
+    line-height: 1;
+  }
+
+  .bar {
+    position: relative;
+    border-top: 1px solid currentColor;
+    display: block;
+    opacity: var(--label-opacity, 1);
+    &:before {
+      content: '';
+      background-color: var(--primary-color, blue);
+      height: 2px;
+      width: 0;
+      left: 50%;
+      bottom: 0;
+      position: absolute;
+      transition: left 0.28s ease, width 0.28s ease;
+      z-index: 2;
+    }
+  }
+
+  input, textarea, select {
+    &:focus {outline: none;}
+  }
+
+  :focus ~ .bar {
+    opacity: 1;
+    &:before {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  .filled, input:focus, textarea:focus, .invalid[type="date"], select:focus {
+    ~ .control-label {
+      font-size: var(--font-small, 12px);
+      height: 1.7em;
+    }
+  }
+
+  .invalid, .invalid:focus {
+    &.filled ~ .control-label {
+      color: var(--error-color, red);
+      opacity: 1;
+    }
+    ~ .bar {
+      opacity: 1;
+      &:before {
+        width: 100%;
+        left: 0;
+        background-color: var(--error-color, red);
+      }
+    }
+    ~ .error {
+      color: var(--error-color, red);
+      opacity: 1;
+    }
+  }
+
+  input[type="date"] {display: inline-flex}
+
+  input[type="date"]:not(:focus):not(.filled):not(.invalid),
+  input[type="datetime-local"]:not(:focus):not(.filled):not(.invalid)
+  {color: transparent}
+}
