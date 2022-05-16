@@ -110,7 +110,7 @@ export default {
 
 <style lang="scss" scoped>
 .material-input {
-  --autofill-color: var(--font-color);
+  --autofill-color: var(--font-color, black);
   --calendar-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzAwMDAwMCIgZD0iTTIwIDNoLTFWMWgtMnYySDdWMUg1djJINGMtMS4xIDAtMiAuOS0yIDJ2MTZjMCAxLjEuOSAyIDIgMmgxNmMxLjEgMCAyLS45IDItMlY1YzAtMS4xLS45LTItMi0yem0wIDE4SDRWOGgxNnYxM3oiLz48L3N2Zz4=')
 }
 
