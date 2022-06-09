@@ -4,6 +4,7 @@
            ref="input"
            v-model="valueInternal"
            :autocapitalize="autocapitalize"
+           :autocomplete="autocomplete"
            :autofocus="autofocus"
            :class="computeClass"
            :disabled="disabled"
@@ -37,6 +38,7 @@ export default {
   props: {
     type: { type: String, default: 'text' },
     autocapitalize: { type: String, default: 'off' },
+    autocomplete: { type: String, default: 'on' },
     spellcheck: { type: String, default: 'true' },
     maxlength: { type: Number },
     needVerification: Boolean,
