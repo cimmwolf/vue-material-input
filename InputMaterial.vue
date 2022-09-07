@@ -91,9 +91,11 @@ export default {
           this.validateEmail(this.valueInternal)
         }
       }
+      this.$emit('blur', this.valueInternal)
     },
     onFocus: function () {
       this.isValid = null
+      this.$emit('focus', this.valueInternal)
     },
     async validateEmail (email) {
       let response = await fetch(`https://email-checker-dot-ds-eur.appspot.com?email=${email}`)
