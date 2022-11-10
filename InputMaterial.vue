@@ -80,7 +80,7 @@ export default {
       if (this.type === 'tel' && this.valueInternal !== '') {
         this.valueInternal = '+' + this.valueInternal.replace(/^\+8([39])/, '7$1').replace(/\D/g, '')
       }
-      this.$emit('input', $e.target.value)
+      this.$emit('update:modelValue', $e.target.value)
     },
     onBlur: function () {
       if (this.validate(this.$refs.input)) {
