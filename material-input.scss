@@ -65,7 +65,7 @@
     }
   }
 
-  .filled, input:focus, input:autofill, textarea:focus, .invalid[type="date"], select:focus {
+  .filled, input:focus, input:-webkit-autofill, textarea:focus, .invalid[type="date"], select:focus {
     ~ .control-label {
       font-size: var(--font-small, 12px);
       height: 1.7em;
