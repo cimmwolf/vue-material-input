@@ -1,6 +1,6 @@
 {
   "name": "@vistro/vue-material-input",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Input fields in Material style",
   "main": "index.js",
   "scripts": {
