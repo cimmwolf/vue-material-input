@@ -9,6 +9,7 @@ export default {
     autofocus: { type: Boolean, default: false },
     value: { type: String, default: '' },
     placeholder: { type: String, default: '' },
+    modelValue: String
   },
   data: function () {
     return {
@@ -16,7 +17,7 @@ export default {
       id: Date.now().toString(36) + Math.random().toString(36).substr(2, 7),
       isFilled: false,
       isValid: null,
-      valueInternal: this.value
+      valueInternal: this.value || this.modelValue
     }
   },
   watch: {
