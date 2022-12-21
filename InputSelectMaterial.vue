@@ -56,6 +56,7 @@ export default {
       this.validate(e.target)
     },
     onInput: function (e) {
+      this.valueInternal = e.target.value
       this.$emit('update:modelValue', e.target.value)
     }
   },
