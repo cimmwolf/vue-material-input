@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 ### Fixed
 - Fix updating valueInternal in InputSelectMaterial
+- Fix initiation of valueInternal in InputSelectMaterial
 ### Changed
 - Remove hardcoded color of label
 

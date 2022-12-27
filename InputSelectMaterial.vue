@@ -46,7 +46,7 @@ export default {
     size: String
   },
   mounted () {
-    if (this.$refs.select.children.length > 0) {
+    if (!this.valueInternal && this.$refs.select.children.length > 0) {
       this.valueInternal = this.$refs.select.children[0].value
       this.$emit('input', this.valueInternal)
     }
