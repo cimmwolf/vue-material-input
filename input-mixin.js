@@ -23,6 +23,9 @@ export default {
   watch: {
     value (val) {
       this.valueInternal = val
+    },
+    modelValue (val) {
+      this.valueInternal = val
     }
   },
   computed: {
