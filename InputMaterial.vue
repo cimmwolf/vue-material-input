@@ -25,7 +25,7 @@
            @invalid="onInvalid">
     <label :for="id" class="control-label">{{ label }}</label><i class="bar"></i>
     <div class="error">{{ error }}</div>
-    <div class="hint">{{ hint }}</div>
+    <div class="hint" v-show="!error">{{ hintInternal }}</div>
   </div>
 </template>
 
@@ -51,6 +51,7 @@ export default {
   },
   data: function () {
     return {
+      hintInternal: this.hint,
       isModalOpened: false,
       smsStatus: null,
       smsServerCode: null,
