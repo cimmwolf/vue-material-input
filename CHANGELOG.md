@@ -6,10 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Fixed
+- The component now always has class .filled then type is datetime-local
 - The hint is no longer displayed while there is an input error
-
-## [Unreleased]
-### Fixed
 - Fix updating valueInternal for v-model binding
 
 ## [2.2.0]

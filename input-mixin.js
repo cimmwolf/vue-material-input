@@ -26,7 +26,7 @@ export default {
     },
     modelValue (val) {
       this.valueInternal = val
-    }
+    },
   },
   computed: {
     computeClass: function () {
@@ -37,23 +37,18 @@ export default {
         classes.push('invalid')
       }
 
-      classes.push({ filled: !!this.valueInternal })
+      classes.push({ filled: !!this.valueInternal || this.type === 'datetime-local' })
       return classes
     },
   },
   methods: {
-    onInvalid: function () {
-      this.isValid = false
+    onInvalid: function (e) {
+      this.isValid = e.target.validity.valid
     },
     validate: function (input) {
-      input.setCustomValidity('')
-      let isValid = true
-      if (input.hasAttribute('required') && input.value === '') {
-        isValid = false
-        this.$emit('invalid')
-      }
-      this.$emit('valid')
-      return this.isValid = isValid
+      this.isValid = input.validity.valid
+      this.$emit(this.isValid ? 'valid' : 'invalid')
+      return this.isValid
     },
     setCustomValidity (message) {
       this.error = message
