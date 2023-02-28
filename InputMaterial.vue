@@ -71,7 +71,7 @@ export default {
     }
   },
   methods: {
-    onInput: function ($e) {
+    onInput: function () {
       this.isFilled = this.valueInternal !== ''
 
       if (this.autocapitalize === 'on' && this.type !== 'email') {
@@ -80,7 +80,7 @@ export default {
       if (this.type === 'tel' && this.valueInternal !== '') {
         this.valueInternal = '+' + this.valueInternal.replace(/^\+8([39])/, '7$1').replace(/\D/g, '')
       }
-      this.$emit('update:modelValue', $e.target.value)
+      this.$emit('update:modelValue', this.valueInternal)
     },
     onBlur: function () {
       if (this.validate(this.$refs.input)) {
