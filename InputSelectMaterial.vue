@@ -21,10 +21,30 @@
 </template>
 
 <style scoped>
+.material-input {
+  position: relative;
+}
+
+.material-input:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  border: 6px solid transparent;
+  border-top-color: currentColor;
+  pointer-events: none;
+  opacity: var(--label-opacity, 1);
+}
+
+.material-input:focus-within:after {
+  opacity: 1;
+}
+
 select {
   width: 100%;
   height: 2.1em;
-  padding: 0.125em 0 0.0625em;
+  padding: 0.125em 15px 0.0625em 0;
   background: none;
   border: none;
   line-height: 1.6;
@@ -32,6 +52,11 @@ select {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+  cursor: pointer;
+}
+
+select option {
+  color: var(--font-color, currentColor);
 }
 </style>
 
