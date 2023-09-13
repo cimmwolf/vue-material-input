@@ -7,9 +7,9 @@ export default {
     required: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     autofocus: { type: Boolean, default: false },
-    value: { type: String, default: '' },
+    value: { type: [String, Number], default: '' },
     placeholder: { type: String, default: '' },
-    modelValue: String
+    modelValue: [String, Number]
   },
   data: function () {
     return {
@@ -37,7 +37,7 @@ export default {
         classes.push('invalid')
       }
 
-      classes.push({ filled: !!this.valueInternal || this.type === 'datetime-local' })
+      classes.push({ filled: !!this.valueInternal || this.type === 'datetime-local' || this.valueInternal === 0})
       return classes
     },
   },
