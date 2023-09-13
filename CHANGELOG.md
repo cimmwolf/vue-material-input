@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - InputSelectMaterial now has an "arrow icon"
 - InputSelectMaterial's select now has cursor pointer
+- Numbers are now allowed as a modelValue
+- Now the "filled" class is added when the valueInternal equals 0
 
 ## [2.2.2]
 ### Fixed
